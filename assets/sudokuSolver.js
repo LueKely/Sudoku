@@ -5,8 +5,8 @@ function solveSudoku(board) {
   }
   if (solve(board)) {
     console.log("Sudoku solved:");
-    printBoard(board);
-    return true;
+
+    return printBoard(board);
   } else {
     console.log("No solution exists.");
     return false;
@@ -76,8 +76,6 @@ function isValidBoard(board) {
 }
 
 function printBoard(board) {
-  for (let row = 0; row < 9; row++) {
-    console.log(board[row].join(" "));
-  }
+  return board;
 }
 export default solveSudoku;

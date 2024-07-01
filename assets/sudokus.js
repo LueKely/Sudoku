@@ -1,6 +1,6 @@
 // JS program to implement the approach
-import solveSudoku from "./sudokuSolver";
-class Sudoku {
+
+export default class Sudoku {
   // Constructor
   constructor(N, K) {
     this.N = N;
@@ -167,14 +167,3 @@ class Sudoku {
     return;
   }
 }
-
-// Driver code
-let N = 9;
-let K = 40;
-let sudoku = new Sudoku(N, K);
-sudoku.fillValues();
-sudoku.printSudoku();
-
-solveSudoku(sudoku.mat);
-
-// This code is contributed by phasing17.
