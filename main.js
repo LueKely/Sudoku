@@ -15,7 +15,7 @@ const GameButton = document.querySelector('.Game');
 // table > tbody
 let Board = document.getElementById('Board').children[0];
 injectMaskedBoard();
-
+disableAllNonZero();
 AnswerButton.addEventListener('click', injectSolvedBoard);
 GameButton.addEventListener('click', () => {
 	window.location.reload();
@@ -46,6 +46,21 @@ function injectSolvedBoard() {
 		) {
 			Board.children[index].children[kindex].firstChild.value =
 				solvedBoard[index][kindex];
+		}
+	}
+}
+
+function disableAllNonZero() {
+	for (let index = 0; index < Board.childElementCount; index++) {
+		for (
+			let kindex = 0;
+			kindex < Board.children[index].childElementCount;
+			kindex++
+		) {
+			let cell = Board.children[index].children[kindex].firstChild;
+			if (cell.value != 0) {
+				cell.disabled = true;
+			}
 		}
 	}
 }
